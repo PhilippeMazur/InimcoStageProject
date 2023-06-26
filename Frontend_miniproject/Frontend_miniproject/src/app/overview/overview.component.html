@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Social Skills</th>
+    <th>Social Accounts</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let person of this.service.people">
+    <td>{{ person.firstname }}</td>
+    <td>{{ person.lastname }}</td>
+    <td>
+      <div class="skills">
+        <p *ngFor="let skill of person.socialSkills">
+          {{ "- " + skill.description }}
+        </p>
+      </div>
+    </td>
+    <td>
+      <div class="accounts">
+        <p *ngFor="let account of person.socialAccounts" class="accountType">
+          {{ account.type + ": " }}
+        </p>
+        <p *ngFor="let account of person.socialAccounts">
+          <a class="accountAddress" href="{{ account.address }}">{{
+            account.address
+          }}</a>
+        </p>
+      </div>
+    </td>
+
+    <td><a href="#" class="actions">Change</a></td>
+  </tr>
+</table>

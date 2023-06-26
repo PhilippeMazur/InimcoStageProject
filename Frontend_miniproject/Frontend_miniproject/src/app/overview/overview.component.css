@@ -1,0 +1,61 @@
+table {
+    margin-top:1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    height: 2rem;
+    vertical-align: middle;
+    font-size: .8rem;
+    font-family: 'Vollkorn', serif;
+}
+
+p {
+    font-family: 'Vollkorn', serif;
+
+}
+
+th {
+    background-color: rgb(63, 35, 35);
+    color: white;
+}
+
+td {
+    min-width: 5rem;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgb(220, 220, 220);
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+
+.actions {
+    font-weight: 500;
+    color: black;
+    transition: .2s;
+}
+
+.actions:hover {
+    transition: .2s;
+    text-decoration: underline;
+
+}
+
+.skills, .accounts {
+    background-color: rgb(236, 236, 236);
+
+}
+
+.accountType {
+    font-weight: 600;
+}
+
+.accountAddress {
+    font-family: 'Vollkorn', serif;
+    color: rgb(62, 28, 28);
+}
+
+.accountAddress:hover {
+    text-decoration: underline;
+}
