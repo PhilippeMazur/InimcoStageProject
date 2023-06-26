@@ -36,6 +36,15 @@ namespace Backend_miniproject
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend_miniproject", Version = "v1" });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
             services.RegisterServices();
             services.RegisterDbContext();
 
@@ -50,6 +59,8 @@ namespace Backend_miniproject
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Backend_miniproject v1"));
             }
+
+            app.UseCors();
 
             app.UseHttpsRedirection();
 
