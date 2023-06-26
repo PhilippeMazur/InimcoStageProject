@@ -1,1 +1,59 @@
-<p>create-person works!</p>
+<div class="combined">
+    <div class="form">
+        <h2>Create new Person</h2>
+        <label for="firstname" >Firstname</label>
+        <input type="text" placeholder="John" id="firstname" name="firstname" class="firstname" />
+        <label for="lastname">Lastname</label>
+        <input type="text" placeholder="Doe" id="lastname" name="lastname" class="lastname"/>
+        <div class="socials">
+            <label for="skills" class="skills">Social Skills</label>
+            <div class="socialSkills" *ngFor="let item of skillContent">
+                <label for="skill">Description</label>
+                <input type="text" placeholder="Smart" class="skill" />
+            </div>
+            <div class="socialButtons">
+                <button class="addExtraSkill" (click)="addExtraSkill()">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="deleteExtraSkill" (click)="deleteExtraSkill()">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="socials">
+            <label for="accounts" class="accounts">Social Accounts</label>
+            <div class="socialAccounts" *ngFor="let item of accountContent">
+                <label for="type">Type</label>
+                <input type="text" placeholder="Instagram" class="type" />
+                <label for="address">Address</label>
+                <input type="text" placeholder="https://instagram.com/CristianoRonaldo" class="address" />
+            </div>
+            <div class="socialButtons">
+                <button class="addExtraSkill" (click)="addExtraAccount()">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="deleteExtraSkill" (click)="deleteExtraAccount()">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="submitButton">
+            <button class="createPersonButton" (click)="createPerson()">Create Person</button>
+        </div>
+    </div>
+    <div class="output">
+        <h2>Output</h2>
+        <div class="outputCode">
+            <p class="info">The number of VOWELS: </p>
+            <p class="data" ></p>
+            <p class="info">The number of CONSTENANTS: </p>
+            <p class="data" ></p>
+            <p class="info">The firstname + last name entered: </p>
+            <p class="data" ></p>
+            <p class="info">The reverse version of the firstname and lastname: </p>
+            <p class="data" ></p>
+            <p class="info">The JSON format of the entire object:</p>
+            <p class="data" ></p>
+        </div>
+    </div>
+</div>

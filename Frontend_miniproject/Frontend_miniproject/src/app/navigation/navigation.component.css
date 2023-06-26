@@ -14,7 +14,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     margin-left: .5rem;
-    color: rgb(88, 49, 49);
+    color: rgb(59, 99, 193);
 }
 
 .title p {
@@ -39,6 +39,6 @@ a {
     transition: .2s;
 }
 a:hover{
-    color: rgb(120, 120, 120);
+    color: rgb(59, 99, 193);
     transition: .2s;
 }

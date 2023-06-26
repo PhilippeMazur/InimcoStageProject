@@ -1,0 +1,179 @@
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    color: rgb(59, 99, 193);
+}
+
+label, input {
+    font-family: 'Vollkorn', serif;
+    color: black;
+    width: 30%;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.combined {
+    display: flex;
+}
+
+.form {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    width: 20rem;
+    height: auto;
+    background-color: rgb(229, 229, 229);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 30rem;
+    height: 26rem;
+    background-color: rgb(229, 229, 229);
+    border-radius: 20px;
+}
+
+.addExtraSkill {
+    height: auto;
+    width: 1.6rem;
+    
+}
+
+.deleteExtraSkill {
+    height: auto;
+    width: 1.6rem;
+}
+
+label , input {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+input {
+    transition: .2s;
+    margin-bottom: .5rem;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Vollkorn', serif;
+}
+
+input:hover {
+    transition: .2s;
+    background-color: white;
+}
+
+input:focus {
+    transition: .2s;
+    background-color: white;
+}
+
+
+.socialButtons {
+    margin-top: .2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.socialAccounts, .socialSkills {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.socialAccounts {
+    background-color: rgb(205, 205, 205);
+}
+
+.socialSkills{
+    background-color: rgb(207, 207, 207);
+}
+
+.submitButton {
+    background-color: rgb(207, 207, 207);
+    width: 100%;
+    height: 4rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.createPersonButton {
+    background-color: rgb(59, 99, 193);
+    color: white;
+    width: 7rem;
+    height: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    transition: .2s;
+
+}
+
+.createPersonButton:hover {
+    transition: .2s;
+    background-color: rgb(29, 63, 166);
+}
+
+.createPersonButton:active {
+    transition: .2s;
+    background-color: rgb(6, 6, 88);
+}
+
+.address {
+    width: 15.5rem;
+}
+
+.outputCode {
+    padding-left: .5rem;
+    padding-top: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(25, 25, 25);
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.outputCode > * {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .8rem;
+
+}
+
+.outputCode > .info {
+    color: white;
+}
+
+.outputCode > .data {
+    color: rgb(0, 184, 6);
+}
+
+.accounts, .skills {
+    font-weight: 600;
+}
