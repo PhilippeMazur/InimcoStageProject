@@ -16,11 +16,11 @@
       </div>
     </td>
     <td>
-      <div class="accounts">
-        <p *ngFor="let account of person.socialAccounts" class="accountType">
+      <div class="accounts" *ngFor="let account of person.socialAccounts">
+        <p  class="accountType">
           {{ account.type + ": " }}
         </p>
-        <p *ngFor="let account of person.socialAccounts">
+        <p >
           <a class="accountAddress" href="{{ account.address }}">{{
             account.address
           }}</a>

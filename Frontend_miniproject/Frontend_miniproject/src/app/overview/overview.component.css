@@ -59,3 +59,7 @@ td {
 .accountAddress:hover {
     text-decoration: underline;
 }
+
+td, p ,a {
+    padding: .2rem;
+}

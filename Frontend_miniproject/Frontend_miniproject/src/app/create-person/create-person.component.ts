@@ -4,6 +4,7 @@ import { Person } from '../entities/Person';
 import { SocialSkills } from '../entities/SocialSkills';
 import { SocialAccounts } from '../entities/SocialAccounts';
 
+
 @Component({
   selector: 'app-create-person',
   templateUrl: './create-person.component.html',
@@ -16,18 +17,24 @@ export class CreatePersonComponent implements OnInit {
   public accountContent: String[] = ["content1"];
   private skillCounter: number = 1;
   private accountCounter: number = 1;
+  public emptyPerson: Person = {
+    firstname: "",
+    lastname: "",
+    socialSkills: [],
+    socialAccounts: []
+  }
   public person: Person = {
     firstname: "",
     lastname: "",
     socialSkills: [],
     socialAccounts: []
   }
-  public amountVowels: string = "5";
+  public amountVowels: string = "";
   public amountConstenants: string = "";
   public fullname: string = "";
   public fullnameReversed: string = "";
   public personJSONFormat: string = "";
-  public showError: boolean = true;
+  public submitted: boolean = true;
 
   ngOnInit(): void {
   }
@@ -85,13 +92,15 @@ export class CreatePersonComponent implements OnInit {
       this.amountVowels = this.countVowels(this.fullname).toString();
       this.amountConstenants = this.countConsonants(this.fullname).toString();
       this.fullnameReversed = this.reverseString(this.fullname);
-      this.personJSONFormat = JSON.stringify(this.person)
-
+      this.personJSONFormat = JSON.stringify(this.person, null, 2);
     } else {
       alert("Please make sure all fields are filled in.")
       this.person.socialSkills.splice(0, this.person.socialSkills.length)
       this.person.socialAccounts.splice(0, this.person.socialAccounts.length)
+      this.submitted = false;
     }
+    this.person.socialSkills.splice(0, this.person.socialSkills.length)
+    this.person.socialAccounts.splice(0, this.person.socialAccounts.length)
 
   }
 
@@ -123,11 +132,6 @@ export class CreatePersonComponent implements OnInit {
 
     return true;
   }
-
-  closeAlert() {
-    this.showError = false;
-  }
-
 
 
   countVowels(fullname: string) {
