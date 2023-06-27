@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../services/person.service';
-import { Person } from '../entities/Person';
-import { SocialSkills } from '../entities/SocialSkills';
-import { SocialAccounts } from '../entities/SocialAccounts';
+import { IPerson } from '../entities/Person';
+import { ISocialSkills } from '../entities/SocialSkills';
+import { ISocialAccounts } from '../entities/SocialAccounts';
 
 
 @Component({
@@ -17,13 +17,13 @@ export class CreatePersonComponent implements OnInit {
   public accountContent: String[] = ["content1"];
   private skillCounter: number = 1;
   private accountCounter: number = 1;
-  public emptyPerson: Person = {
+  public emptyPerson: IPerson = {
     firstname: "",
     lastname: "",
     socialSkills: [],
     socialAccounts: []
   }
-  public person: Person = {
+  public person: IPerson = {
     firstname: "",
     lastname: "",
     socialSkills: [],
@@ -38,24 +38,8 @@ export class CreatePersonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  public addExtraSkill() {
-    this.skillCounter++;
-    this.skillContent.push("content" + this.skillCounter)
-  }
-  public deleteExtraSkill() {
-    this.skillCounter--;
-    this.skillContent.pop();
-  }
-  public addExtraAccount() {
-    this.accountCounter++;
-    this.accountContent.push("content" + this.accountCounter)
-  }
-  public deleteExtraAccount() {
-    this.accountCounter--;
-    this.accountContent.pop();
-  }
-
+  
+  //Make POST request to backend
   public createPerson() {
     const firstnameInput = document.querySelector('.firstname') as HTMLInputElement;
     const lastnameInput = document.querySelector('.lastname') as HTMLInputElement;
@@ -66,7 +50,7 @@ export class CreatePersonComponent implements OnInit {
     const skillInputs = document.querySelectorAll('.skill') as NodeListOf<HTMLInputElement>;
 
     skillInputs.forEach(input => {
-      const socialSkill: SocialSkills = {
+      const socialSkill: ISocialSkills = {
         description: input.value
       }
       this.person.socialSkills.push(socialSkill)
@@ -76,7 +60,7 @@ export class CreatePersonComponent implements OnInit {
     const addressInputs = document.querySelectorAll('.address') as NodeListOf<HTMLInputElement>;
 
     for (let i = 0; i < typeInputs.length; i++) {
-      const socialAccount: SocialAccounts = {
+      const socialAccount: ISocialAccounts = {
         type: typeInputs[i].value,
         address: addressInputs[i].value
       }
@@ -104,7 +88,8 @@ export class CreatePersonComponent implements OnInit {
 
   }
 
-  validatePersonData(person: Person): boolean {
+  //Check if input fields aren't empty
+  validatePersonData(person: IPerson): boolean {
     if (
       person.firstname == '' ||
       person.lastname == '' ||
@@ -132,7 +117,6 @@ export class CreatePersonComponent implements OnInit {
 
     return true;
   }
-
 
   countVowels(fullname: string) {
     const lowerStr = fullname.toLowerCase();
@@ -169,5 +153,23 @@ export class CreatePersonComponent implements OnInit {
   reverseString(fullname: string) {
     return fullname.split('').reverse().join('');
   }
+
+  public addExtraSkill() {
+    this.skillCounter++;
+    this.skillContent.push("content" + this.skillCounter)
+  }
+  public deleteExtraSkill() {
+    this.skillCounter--;
+    this.skillContent.pop();
+  }
+  public addExtraAccount() {
+    this.accountCounter++;
+    this.accountContent.push("content" + this.accountCounter)
+  }
+  public deleteExtraAccount() {
+    this.accountCounter--;
+    this.accountContent.pop();
+  }
+
 
 }

@@ -1,10 +1,10 @@
-import { SocialAccounts } from "./SocialAccounts";
-import { SocialSkills } from "./SocialSkills";
+import { ISocialAccounts } from "./SocialAccounts";
+import { ISocialSkills } from "./SocialSkills";
 
-export interface Person {
+export interface IPerson {
     id?: number;
     firstname: string
     lastname: string;
-    socialSkills: SocialSkills[];
-    socialAccounts : SocialAccounts[];
+    socialSkills: ISocialSkills[];
+    socialAccounts : ISocialAccounts[];
 }

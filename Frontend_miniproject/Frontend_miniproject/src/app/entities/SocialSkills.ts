@@ -1,4 +1,4 @@
-export interface SocialSkills {
+export interface ISocialSkills {
     id?: number;
     description: string;
     personId?: number;

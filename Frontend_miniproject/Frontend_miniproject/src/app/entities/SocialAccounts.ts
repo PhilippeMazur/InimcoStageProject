@@ -1,4 +1,4 @@
-export interface SocialAccounts {
+export interface ISocialAccounts {
     id?: number;
     type: string;
     address: string;

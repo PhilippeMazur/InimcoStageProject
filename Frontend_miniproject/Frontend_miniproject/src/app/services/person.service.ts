@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Person } from '../entities/Person';
+import { IPerson } from '../entities/Person';
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -12,15 +12,15 @@ export class PersonService {
     this.GetAll();
   }
 
-  public people: Person[] = [];
+  public people: IPerson[] = [];
   private baseURL: string = "https://localhost:5000/api/Person"
 
   GetAll() {
-    return this.client.get<Person[]>(this.baseURL).subscribe(res => this.people = res)
+    return this.client.get<IPerson[]>(this.baseURL).subscribe(res => this.people = res)
   }
 
-  CreatePerson(person: Person) {
-    return this.client.post<Person[]>(this.baseURL, person)
+  CreatePerson(person: IPerson) {
+    return this.client.post<IPerson[]>(this.baseURL, person)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           console.error('An error occurred:', error);
@@ -28,7 +28,7 @@ export class PersonService {
         })
       )
       .subscribe(
-        (response: Person[]) => {
+        (response: IPerson[]) => {
           console.log('Person created:', response);
         },
         (error: any) => {
